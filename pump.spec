@@ -1,6 +1,6 @@
 Summary:	Bootp and dhcp client for automatic IP configuration
 Name:		pump
-Version:	0.7.8
+Version:	0.7.9
 Release:	1
 Group:		Networking/Utilities
 Group(pl):	Sieciowe/Narzêdzia
