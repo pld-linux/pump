@@ -7,7 +7,7 @@ Group(pl):	Sieciowe/Narzêdzia
 Copyright:	MIT
 Source:		%{name}-%{version}.tar.gz
 Requires:	rc-scripts
-BuildPrereq:	popt-devel
+BuildRequires:	popt-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 Obsoletes:	bootpc
 
