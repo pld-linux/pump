@@ -16,9 +16,8 @@ Patch1:		%{name}-nobootp.patch
 Patch2:		%{name}-retry-forever.patch
 Patch3:		%{name}-rhbug-21088.patch
 Patch4:		%{name}-rhbug-17724.patch
-
-PreReq:		rc-scripts
 BuildRequires:	popt-devel
+PreReq:		rc-scripts
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	bootpc
 Obsoletes:	pump-devel
@@ -86,11 +85,15 @@ DHCP.
 %patch4 -p1
 
 %build
-%{__make} LDFLAGS="%{rpmldflags}" COPT_FLAGS="%{rpmcflags}"
+%{__make} \
+	LDFLAGS="%{rpmldflags}" \
+	COPT_FLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install MAN8PATH="$RPM_BUILD_ROOT%{_mandir}/man8"
+
+%{__make} install \
+	MAN8PATH="$RPM_BUILD_ROOT%{_mandir}/man8"
 
 %clean
 rm -rf $RPM_BUILD_ROOT
