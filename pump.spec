@@ -29,11 +29,11 @@ or DHCP.
 %patch -p1
 
 %build
-make LDFLAGS="-s" COPT_FLAGS="$RPM_OPT_FLAGS"
+%{__make} LDFLAGS="-s" COPT_FLAGS="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install MAN8PATH="$RPM_BUILD_ROOT%{_mandir}/man8"
+%{__make} install MAN8PATH="$RPM_BUILD_ROOT%{_mandir}/man8"
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man8/*
 
