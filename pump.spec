@@ -1,7 +1,7 @@
 Summary:	Bootp and dhcp client for automatic IP configuration
 Name:		pump
-Version:	0.6.4
-Release:	2
+Version:	0.6.7
+Release:	1
 Group:		Networking/Utilities
 Group(pl):	Sieciowe/Narzêdzia
 Copyright:	MIT
@@ -30,7 +30,7 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install
+make install MAN8PATH="$RPM_BUILD_ROOT%{_mandir}/man8"
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man8/*
 
