@@ -41,7 +41,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Thu Apr  1 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [0.5-2]
+  [0.2-2]
 - adde "BuildPrereq: popt-devel",
 - added Group(pl).
 
