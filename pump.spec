@@ -1,12 +1,16 @@
 Summary:	Bootp and dhcp client for automatic IP configuration
+Summary(pl):	Klient bootp i dhcp do automatycznej konfiguracji IP
 Name:		pump
 Version:	0.7.9
 Release:	2
+License:	MIT
 Group:		Networking/Utilities
+Group(de):	Netzwerkwesen/Werkzeuge
+Group(es):	Red/Utilitarios
 Group(pl):	Sieciowe/Narzêdzia
-Copyright:	MIT
+Group(pt_BR):	Rede/Utilitários
 Source0:	%{name}-%{version}.tar.gz
-Patch0:		pump-Makefile.patch
+Patch0:		%{name}-Makefile.patch
 Prereq:		rc-scripts
 BuildRequires:	popt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -23,6 +27,15 @@ Pump is a combined BOOTP and DHCP client daemon, which allows your
 machine to retrieve configuration information from a server. You
 should install this package if you are on a network which uses BOOTP
 or DHCP.
+
+%description -l pl
+DHCP (Dynamic Host Configuration Protocol) i BOOTP (Boot Protocol) to
+protoko³y pozwalaj±ce urz±dzeniom w sieci IP otrzymaæ informacje o
+konfiguracji swojej sieci od serwerów. Celem DHCP i BOOTP jest
+u³atwienie administrowania du¿± sieci±.
+
+Pump jest demonem zawieraj±cym klientów BOOTP i DHCP, co pozwala
+maszynie odczytywaæ informacje o konfiguracji z serwera.
 
 %prep
 %setup -q
