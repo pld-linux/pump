@@ -2,7 +2,7 @@ Summary:	Bootp and dhcp client for automatic IP configuration
 Summary(pl):	Klient bootp i dhcp do automatycznej konfiguracji IP
 Name:		pump
 Version:	0.7.9
-Release:	2
+Release:	3
 License:	MIT
 Group:		Networking/Utilities
 Group(de):	Netzwerkwesen/Werkzeuge
