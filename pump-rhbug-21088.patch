@@ -1,0 +1,20 @@
+--- pump-0.8.11/net.c.21088	Fri Jul 20 12:26:57 2001
++++ pump-0.8.11/net.c	Fri Jul 20 12:29:59 2001
+@@ -738,6 +738,7 @@
+ int main(int argc, const char **argv) {
+     int netSet, rc;
+     int x;
++    int noDns = 0;
+     char * bootProto = NULL;
+     char * device = NULL;
+     char * hostname = NULL;
+@@ -768,6 +769,9 @@
+ 	    },
+ 	    { "device", 'd', POPT_ARG_STRING, &device, 0,
+ 	      _("Network device"), NULL 
++	    },
++	    { "nodns", '\0', POPT_ARG_NONE, &noDns, 0,
++	      _("No DNS lookups"), NULL 
+ 	    },
+ 	    { 0, 0, 0, 0, 0 }
+     };
