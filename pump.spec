@@ -10,6 +10,7 @@ Release:	9
 License:	MIT
 Group:		Networking/Utilities
 Source0:	%{name}-%{version}.tar.gz
+# Source0-md5:	8bc6cc32a6c2224a8b87e7785eee5fca
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-nobootp.patch
 Patch2:		%{name}-retry-forever.patch
