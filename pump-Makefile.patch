@@ -1,0 +1,29 @@
+--- pump-0.7.5/Makefile.wiget	Thu Feb  3 00:29:24 2000
++++ pump-0.7.5/Makefile	Tue Feb 15 08:35:27 2000
+@@ -1,15 +1,15 @@
+ SBINPATH = $(RPM_BUILD_ROOT)/sbin
+ USRSBINPATH = $(RPM_BUILD_ROOT)/usr/sbin
+ MAN8PATH = $(RPM_BUILD_ROOT)/usr/man/man8
+-CFLAGS = -Wall -g $(RPM_OPT_FLAGS) -D__STANDALONE__ -DVERSION=\"$(VERSION)\"
++CFLAGS = -Wall $(COPT_FLAGS) -D__STANDALONE__ -DVERSION=\"$(VERSION)\"
+ 
+-LOADLIBES = /usr/lib/libpopt.a -lresolv
++LOADLIBES = -lpopt -lresolv
+ LDFLAGS = -g
+ 
+ VERSION=$(shell awk '/Version:/ { print $$2 }' pump.spec)
+ CVSTAG = r$(subst .,-,$(VERSION))
+ 
+-all:	pump netconfig
++all:	pump 
+ 
+ pump:	pump.o config.o libpump.a(dhcp.o)
+ 
+@@ -30,7 +30,6 @@
+ 
+ install:
+ 	mkdir -p $(SBINPATH) $(MAN8PATH) $(USRSBINPATH)
+-	install -m 755 -s netconfig $(USRSBINPATH)/netconfig
+ 	install -m 755 -s pump $(SBINPATH)/pump
+ 	install -m 644 pump.8 $(MAN8PATH)
+ 
