@@ -32,7 +32,7 @@ make
 rm -rf $RPM_BUILD_ROOT
 make install
 
-gzip -9nf $RPM_BUILD_ROOT/usr/man/man8/*
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man8/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -40,7 +40,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) /sbin/pump
-/usr/man/man8/*
+%{_mandir}/man8/*
 
 %changelog
 * Thu Apr  1 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
@@ -52,4 +52,4 @@ rm -rf $RPM_BUILD_ROOT
 - it was always requesting a 20 second lease
 
 * Mon Mar 22 1999 Michael K. Johnson <johnsonm@redhat.com>
-- added minimal man page /usr/man/man8/pump.8
+- added minimal man page %{_mandir}/man8/pump.8
