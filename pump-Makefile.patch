@@ -1,18 +1,24 @@
-diff -Nru pump-0.7.9/Makefile pump-0.7.9.new/Makefile
---- pump-0.7.9/Makefile	Tue May  9 16:21:18 2000
-+++ pump-0.7.9.new/Makefile	Tue May  9 16:21:34 2000
-@@ -3,15 +3,15 @@
- USRLIBPATH = $(RPM_BUILD_ROOT)/usr/lib
- INCPATH = $(RPM_BUILD_ROOT)/usr/include
- MAN8PATH = $(RPM_BUILD_ROOT)/usr/man/man8
--CFLAGS = -Wall -g $(RPM_OPT_FLAGS) -D__STANDALONE__ -DVERSION=\"$(VERSION)\"
+--- pump-0.8.11.orig/Makefile	Thu Mar  1 08:15:22 2001
++++ pump-0.8.11/Makefile	Wed Feb 27 09:01:52 2002
+@@ -1,18 +1,17 @@
+ SBINPATH = $(RPM_BUILD_ROOT)/sbin
+-USRSBINPATH = $(sbindir)
+-USRLIBPATH = $(libdir)
+-INCPATH = $(includedir)
+-MAN8PATH = $(mandir)/man8
+-CFLAGS = -I. -Wall -g $(RPM_OPT_FLAGS) -D__STANDALONE__ -DVERSION=\"$(VERSION)\"
+-CVSROOT = $(shell cat CVS/Root)
++USRSBINPATH = $(RPM_BUILD_ROOT)/usr/sbin
++USRLIBPATH = $(RPM_BUILD_ROOT)/usr/lib
++INCPATH = $(RPM_BUILD_ROOT)/usr/include
++MAN8PATH = $(RPM_BUILD_ROOT)/usr/man/man8
 +CFLAGS = -Wall $(COPT_FLAGS) -D__STANDALONE__ -DVERSION=\"$(VERSION)\"
  
 -LOADLIBES = /usr/lib/libpopt.a -lresolv
 +LOADLIBES = -lpopt -lresolv
  LDFLAGS = -g
  
- VERSION=0.7.9
+ VERSION=0.8.11
  CVSTAG = r$(subst .,-,$(VERSION))
  
 -all:	pump netconfig
@@ -20,7 +26,7 @@ diff -Nru pump-0.7.9/Makefile pump-0.7.9.new/Makefile
  
  pump:	pump.o config.o libpump.a(dhcp.o)
  
-@@ -33,7 +33,6 @@
+@@ -34,7 +33,6 @@
  install:
  	mkdir -p $(SBINPATH) $(MAN8PATH) $(USRSBINPATH)
  	mkdir -p $(USRLIBPATH) $(INCPATH)
