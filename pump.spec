@@ -7,7 +7,7 @@ Group(pl):	Sieciowe/Narzêdzia
 Copyright:	MIT
 Source0:	%{name}-%{version}.tar.gz
 Patch0:		pump-Makefile.patch
-Requires:	rc-scripts
+Prereq:		rc-scripts
 BuildRequires:	popt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	bootpc
