@@ -9,7 +9,7 @@ Source:		%{name}-%{version}.tar.gz
 Patch:		pump-Makefile.patch
 Requires:	rc-scripts
 BuildRequires:	popt-devel
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	bootpc
 
 %description
