@@ -5,8 +5,8 @@ Release:	2
 Group:		Networking/Utilities
 Group(pl):	Sieciowe/Narzêdzia
 Copyright:	MIT
-Source:		%{name}-%{version}.tar.gz
-Patch:		pump-Makefile.patch
+Source0:	%{name}-%{version}.tar.gz
+Patch0:		pump-Makefile.patch
 Requires:	rc-scripts
 BuildRequires:	popt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -16,12 +16,13 @@ Obsoletes:	bootpc
 DHCP (Dynamic Host Configuration Protocol) and BOOTP (Boot Protocol)
 are protocols which allow individual devices on an IP network to get
 their own network configuration information (IP address, subnetmask,
-broadcast address, etc.) from network servers.  The overall purpose of
+broadcast address, etc.) from network servers. The overall purpose of
 DHCP and BOOTP is to make it easier to administer a large network.
 
-Pump is a combined BOOTP and DHCP client daemon, which allows your machine
-to retrieve configuration information from a server.  You should install
-this package if you are on a network which uses BOOTP or DHCP.
+Pump is a combined BOOTP and DHCP client daemon, which allows your
+machine to retrieve configuration information from a server. You
+should install this package if you are on a network which uses BOOTP
+or DHCP.
 
 %prep
 %setup -q
