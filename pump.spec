@@ -29,7 +29,10 @@ this package if you are on a network which uses BOOTP or DHCP.
 make
 
 %install
+rm -rf $RPM_BUILD_ROOT
 make install
+
+gzip -9nf $RPM_BUILD_ROOT/usr/man/man8/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
