@@ -1,11 +1,12 @@
 Summary:	Bootp and dhcp client for automatic IP configuration
 Name:		pump
 Version:	0.7.5
-Release:	2
+Release:	3
 Group:		Networking/Utilities
 Group(pl):	Sieciowe/Narzêdzia
 Copyright:	MIT
 Source:		%{name}-%{version}.tar.gz
+Patch:		pump-Makefile.patch
 Requires:	rc-scripts
 BuildRequires:	popt-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
@@ -24,9 +25,10 @@ this package if you are on a network which uses BOOTP or DHCP.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
-make
+make LDFLAGS="-s" COPT_FLAGS="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
