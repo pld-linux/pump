@@ -6,7 +6,7 @@ Summary(ru):	Клиент bootp и dhcp для автоматической настройки IP
 Summary(uk):	Кл╕╓нт bootp та dhcp для автоматичного налагодження IP
 Name:		pump
 Version:	0.8.11
-Release:	9
+Release:	10
 License:	MIT
 Group:		Networking/Utilities
 Source0:	%{name}-%{version}.tar.gz
