@@ -1,6 +1,6 @@
 Summary:	Bootp and dhcp client for automatic IP configuration
 Name:		pump
-Version:	0.5
+Version:	0.6.4
 Release:	2
 Group:		Networking/Utilities
 Group(pl):	Sieciowe/Narzêdzia
@@ -9,7 +9,7 @@ Source:		%{name}-%{version}.tar.gz
 Requires:	rc-scripts
 BuildPrereq:	popt-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
-Obsoletes:	dhcpcd bootpc
+Obsoletes:	bootpc
 
 %description
 DHCP (Dynamic Host Configuration Protocol) and BOOTP (Boot Protocol)
