@@ -1,16 +1,22 @@
 Summary:	Bootp and dhcp client for automatic IP configuration
 Summary(pl):	Klient bootp i dhcp do automatycznej konfiguracji IP
 Name:		pump
-Version:	0.7.9
-Release:	3
+Version:	0.8.11
+Release:	1
 License:	MIT
 Group:		Networking/Utilities
 Source0:	%{name}-%{version}.tar.gz
 Patch0:		%{name}-Makefile.patch
-Prereq:		rc-scripts
+Patch1: 	%{name}-nobootp.patch
+Patch2: 	%{name}-retry-forever.patch
+Patch3: 	%{name}-rhbug-21088.patch
+Patch4: 	%{name}-rhbug-17724.patch
+
+PreReq:		rc-scripts
 BuildRequires:	popt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	bootpc
+Obsoletes:	pump-devel
 
 %description
 DHCP (Dynamic Host Configuration Protocol) and BOOTP (Boot Protocol)
@@ -35,7 +41,11 @@ maszynie odczytywaæ informacje o konfiguracji z serwera.
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
+%patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
 
 %build
 %{__make} LDFLAGS="%{rpmldflags}" COPT_FLAGS="%{rpmcflags}"
