@@ -76,6 +76,17 @@ Pump - это комбинированный демон клиентов BOOTP и DHCP, который
 Установите этот пакет если вы в сети, которая использует BOOTP или
 DHCP.
 
+%package devel
+Summary: Development tools for sending DHCP and BOOTP requests.
+Group: Development/Libraries
+
+%description devel
+The pump-devel package provides system developers the ability to send
+BOOTP and DHCP requests from their programs. BOOTP and DHCP are
+protocols used to provide network configuration information to
+networked machines.
+
+
 %prep
 %setup -q
 %patch0 -p1
@@ -102,3 +113,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) /sbin/pump
 %{_mandir}/man8/*
+
+%files devel
+%defattr(644,root,root,755)
+%{_libdir}/libpump.a
+%{_includedir}/pump.h
