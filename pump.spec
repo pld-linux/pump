@@ -5,17 +5,17 @@ Summary(pt_BR):	Cliente para dhcp e bootp para configuraГЦo automАtica de IP
 Summary(ru):	Клиент bootp и dhcp для автоматической настройки IP
 Summary(uk):	Кл╕╓нт bootp та dhcp для автоматичного налагодження IP
 Name:		pump
-Version:	0.8.11
-Release:	10
+Version:	0.8.22
+Release:	1
 License:	MIT
 Group:		Networking/Utilities
 Source0:	%{name}-%{version}.tar.gz
-# Source0-md5:	8bc6cc32a6c2224a8b87e7785eee5fca
+# Source0-md5:	ec177ebc21cd647d7ef17fe7147c54cc
 Patch0:		%{name}-Makefile.patch
-Patch1:		%{name}-nobootp.patch
-Patch2:		%{name}-retry-forever.patch
-Patch3:		%{name}-rhbug-21088.patch
-Patch4:		%{name}-rhbug-17724.patch
+#Patch1:		%{name}-nobootp.patch
+#Patch2:		%{name}-retry-forever.patch
+#Patch3:		%{name}-rhbug-21088.patch
+#Patch4:		%{name}-rhbug-17724.patch
 BuildRequires:	popt-devel
 PreReq:		rc-scripts
 Obsoletes:	bootpc
@@ -95,10 +95,10 @@ informacji o konfiguracji sieci innym maszynom.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
+#%%patch1 -p1
+#%%patch2 -p1
+#%%patch3 -p1
+#%%patch4 -p1
 
 %build
 %{__make} \
@@ -109,12 +109,14 @@ informacji o konfiguracji sieci innym maszynom.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	MAN8PATH="$RPM_BUILD_ROOT%{_mandir}/man8"
+	MAN8PATH=$RPM_BUILD_ROOT/%{_mandir}/man8
+
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) /sbin/pump
 %{_mandir}/man8/*
