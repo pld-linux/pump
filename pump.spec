@@ -18,9 +18,8 @@ Patch3:		%{name}-rhbug-21088.patch
 Patch4:		%{name}-rhbug-17724.patch
 BuildRequires:	popt-devel
 PreReq:		rc-scripts
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	bootpc
-Obsoletes:	pump-devel
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 DHCP (Dynamic Host Configuration Protocol) and BOOTP (Boot Protocol)
@@ -77,8 +76,10 @@ Pump - ‹‘œ ÀœÕ¬…Œ…“œ◊¡ŒŒŸ  ƒ≈ÕœŒ ÀÃ…≈Œ‘œ◊ BOOTP … DHCP, Àœ‘œ“Ÿ 
 DHCP.
 
 %package devel
-Summary: Development tools for sending DHCP and BOOTP requests.
-Group: Development/Libraries
+Summary:	Header file and static library for sending DHCP and BOOTP requests
+Summary(pl):	Plik nag≥Ûwkowy i biblioteka statyczna do wysy≥ania ø±daÒ DHCP i BOOTP
+Group:		Development/Libraries
+# doesn't require base
 
 %description devel
 The pump-devel package provides system developers the ability to send
@@ -86,6 +87,10 @@ BOOTP and DHCP requests from their programs. BOOTP and DHCP are
 protocols used to provide network configuration information to
 networked machines.
 
+%description devel -l pl
+Ten pakiet daje programistom moøliwo∂Ê wysy≥ania ø±daÒ BOOTP i DHCP w
+swoich programach. BOOTP i DHCP to protoko≥y s≥uø±ce do udostÍpniania
+informacji o konfiguracji sieci innym maszynom.
 
 %prep
 %setup -q
