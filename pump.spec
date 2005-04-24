@@ -12,10 +12,8 @@ Group:		Networking/Utilities
 Source0:	%{name}-%{version}.tar.gz
 # Source0-md5:	ec177ebc21cd647d7ef17fe7147c54cc
 Patch0:		%{name}-Makefile.patch
-#Patch1:		%{name}-nobootp.patch
-#Patch2:		%{name}-retry-forever.patch
-#Patch3:		%{name}-rhbug-21088.patch
-#Patch4:		%{name}-rhbug-17724.patch
+Patch1:		%{name}-pl.patch
+BuildRequires:	gettext-devel
 BuildRequires:	popt-devel
 PreReq:		rc-scripts
 Obsoletes:	bootpc
@@ -95,13 +93,15 @@ informacji o konfiguracji sieci innym maszynom.
 %prep
 %setup -q
 %patch0 -p1
-#%%patch1 -p1
-#%%patch2 -p1
-#%%patch3 -p1
-#%%patch4 -p1
+%patch1 -p1
+
+mv -f po/{eu_ES,eu}.po
+mv -f po/{no,nb}.po
+mv -f po/{sr,sr@Latn}.po
 
 %build
 %{__make} \
+	CC="%{__cc}" \
 	LDFLAGS="%{rpmldflags}" \
 	COPT_FLAGS="%{rpmcflags}"
 
@@ -109,7 +109,7 @@ informacji o konfiguracji sieci innym maszynom.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	MAN8PATH=$RPM_BUILD_ROOT/%{_mandir}/man8
+	MAN8PATH=$RPM_BUILD_ROOT%{_mandir}/man8
 
 %find_lang %{name}
 
