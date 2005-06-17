@@ -109,6 +109,7 @@ mv -f po/{sr,sr@Latn}.po
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
+	USRLIBPATH=$RPM_BUILD_ROOT%{_libdir} \
 	MAN8PATH=$RPM_BUILD_ROOT%{_mandir}/man8
 
 %find_lang %{name}
