@@ -15,7 +15,7 @@ Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-pl.patch
 BuildRequires:	gettext-devel
 BuildRequires:	popt-devel
-PreReq:		rc-scripts
+Requires:	rc-scripts
 Obsoletes:	bootpc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
