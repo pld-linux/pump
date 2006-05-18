@@ -1,20 +1,25 @@
---- ./Makefile	2005-04-24 01:14:07.563075728 +0200
-+++ ./Makefile.new	2005-04-24 01:17:39.800810688 +0200
-@@ -2,22 +2,21 @@
+--- pump-0.8.24/Makefile    2006-05-18 22:13:45.773932119 +0300
++++ /tmp/xx    2006-05-18 22:21:01.563707118 +0300
+@@ -1,23 +1,30 @@
+ VERSION=$(shell awk '/^Version:/ { print $$2 }' pump.spec)
  RELEASE=$(shell awk '/^Release:/ { print $$2 }' pump.spec)
++lib = lib
++prefix = /usr
++sbindir = $(prefix)/sbin
++libdir = $(prefix)/$(lib)
++mandir = $(prefix)/share/man
++includedir = $(prefix)/include
  
- SBINPATH = $(RPM_BUILD_ROOT)/sbin
--USRSBINPATH = $(sbindir)
--USRLIBPATH = $(libdir)
--INCPATH = $(includedir)
--MAN8PATH = $(mandir)/man8
--CFLAGS = -fPIC -I. -Wall -g $(RPM_OPT_FLAGS) -D__STANDALONE__ -DVERSION=\"$(VERSION)\"
--CVSROOT = $(shell cat CVS/Root 2>/dev/null)
-+USRSBINPATH = $(RPM_BUILD_ROOT)/usr/sbin
-+USRLIBPATH = $(RPM_BUILD_ROOT)/usr/lib
-+INCPATH = $(RPM_BUILD_ROOT)/usr/include
-+MAN8PATH = $(RPM_BUILD_ROOT)/usr/man/man8
-+CFLAGS = -Wall $(COPT_FLAGS) -D__STANDALONE__ -DVERSION=\"$(VERSION)\"
+-SBINPATH = $(RPM_BUILD_ROOT)/sbin
++SBINPATH = /sbin
+ USRSBINPATH = $(sbindir)
+ USRLIBPATH = $(libdir)
+ INCPATH = $(includedir)
+ MAN8PATH = $(mandir)/man8
+-CFLAGS = -fPIC -I. -Wall -Werror -g $(RPM_OPT_FLAGS) -D__STANDALONE__ -DVERSION=\"$(VERSION)\"
++OPTFLAGS = -Wall -Werror -g
++CFLAGS = -fPIC -D__STANDALONE__ -DVERSION=\"$(VERSION)\" $(OPTFLAGS)
+ CVSROOT = $(shell cat CVS/Root 2>/dev/null)
  
  ARCH := $(patsubst i%86,i386,$(shell uname -m))
  ARCH := $(patsubst sparc%,sparc,$(ARCH))
@@ -30,14 +35,26 @@
  
  pump:	pump.o config.o libpump.a(dhcp.o)
  
-@@ -43,7 +42,6 @@
+@@ -40,13 +47,12 @@
+ 	make -C po clean
+ 
  install:
- 	mkdir -p $(SBINPATH) $(MAN8PATH) $(USRSBINPATH)
- 	mkdir -p $(USRLIBPATH) $(INCPATH) $(USRSHAREPATH)
+-	mkdir -p $(SBINPATH) $(MAN8PATH) $(USRSBINPATH)
+-	mkdir -p $(USRLIBPATH) $(INCPATH) $(USRSHAREPATH)
 -	install -m 755 netconfig $(USRSBINPATH)/netconfig
- 	install -m 755 pump $(SBINPATH)/pump
- 	install -m 644 pump.8 $(MAN8PATH)
- 	install -m 644 libpump.a $(USRLIBPATH)
+-	install -m 755 pump $(SBINPATH)/pump
+-	install -m 644 pump.8 $(MAN8PATH)
+-	install -m 644 libpump.a $(USRLIBPATH)
+-	install -m 644 pump.h $(INCPATH)
++	mkdir -p $(DESTDIR)$(SBINPATH) $(DESTDIR)$(MAN8PATH) $(DESTDIR)$(USRSBINPATH)
++	mkdir -p $(DESTDIR)$(USRLIBPATH) $(DESTDIR)$(INCPATH) $(DESTDIR)$(USRSHAREPATH)
++	install -m 755 pump $(DESTDIR)$(SBINPATH)/pump
++	install -m 644 pump.8 $(DESTDIR)$(MAN8PATH)
++	install -m 644 libpump.a $(DESTDIR)$(USRLIBPATH)
++	install -m 644 pump.h $(DESTDIR)$(INCPATH)
+ 	make -C po install datadir=$(datadir)
+ 
+ create-archive: tag-archive
 --- ./po/Makefile	2005-04-24 01:14:07.563075728 +0200
 +++ ./po/Makefile.new	2005-04-24 01:17:39.800810688 +0200
 @@ -3,1 +3,1 @@
