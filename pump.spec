@@ -5,12 +5,12 @@ Summary(pt_BR):	Cliente para dhcp e bootp para configuraГЦo automАtica de IP
 Summary(ru):	Клиент bootp и dhcp для автоматической настройки IP
 Summary(uk):	Кл╕╓нт bootp та dhcp для автоматичного налагодження IP
 Name:		pump
-Version:	0.8.22
+Version:	0.8.24
 Release:	1
 License:	MIT
 Group:		Networking/Utilities
 Source0:	%{name}-%{version}.tar.gz
-# Source0-md5:	ec177ebc21cd647d7ef17fe7147c54cc
+# Source0-md5:	866fc9f62b8161eb1514a6a06597edc9
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-pl.patch
 BuildRequires:	gettext-devel
@@ -74,8 +74,8 @@ Pump - это комбинированный демон клиентов BOOTP и DHCP, который
 DHCP.
 
 %package devel
-Summary:	Header file and static library for sending DHCP and BOOTP requests
-Summary(pl):	Plik nagЁСwkowy i biblioteka statyczna do wysyЁania ©╠daЯ DHCP i BOOTP
+Summary:	Header file for sending DHCP and BOOTP requests
+Summary(pl):	Plik nagЁСwkowy do wysyЁania ©╠daЯ DHCP i BOOTP
 Group:		Development/Libraries
 # doesn't require base
 
@@ -90,6 +90,15 @@ Ten pakiet daje programistom mo©liwo╤Ф wysyЁania ©╠daЯ BOOTP i DHCP w
 swoich programach. BOOTP i DHCP to protokoЁy sЁu©╠ce do udostЙpniania
 informacji o konfiguracji sieci innym maszynom.
 
+%package static
+Summary:	Static library for sending DHCP and BOOTP requests
+Summary(pl):	Biblioteka statyczna do wysyЁania ©╠daЯ DHCP i BOOTP
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
+
+%description static
+Static library for pump.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -103,14 +112,14 @@ mv -f po/{sr,sr@Latn}.po
 %{__make} \
 	CC="%{__cc}" \
 	LDFLAGS="%{rpmldflags}" \
-	COPT_FLAGS="%{rpmcflags}"
+	OPTFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	USRLIBPATH=$RPM_BUILD_ROOT%{_libdir} \
-	MAN8PATH=$RPM_BUILD_ROOT%{_mandir}/man8
+	lib=%{_lib} \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang %{name}
 
@@ -124,5 +133,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/libpump.a
 %{_includedir}/pump.h
+
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/libpump.a
