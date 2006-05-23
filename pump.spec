@@ -99,6 +99,9 @@ Requires:	%{name}-devel = %{version}-%{release}
 %description static
 Static library for pump.
 
+%description static -l pl
+Statyczna biblioteka pump.
+
 %prep
 %setup -q
 %patch0 -p1
