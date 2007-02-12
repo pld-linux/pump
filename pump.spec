@@ -1,9 +1,9 @@
 Summary:	Bootp and dhcp client for automatic IP configuration
-Summary(es):	Cliente dchp y bootp para configuraciСn automАtica de IP
-Summary(pl):	Klient bootp i dhcp do automatycznej konfiguracji IP
-Summary(pt_BR):	Cliente para dhcp e bootp para configuraГЦo automАtica de IP
-Summary(ru):	Клиент bootp и dhcp для автоматической настройки IP
-Summary(uk):	Кл╕╓нт bootp та dhcp для автоматичного налагодження IP
+Summary(es.UTF-8):   Cliente dchp y bootp para configuraciцЁn automц║tica de IP
+Summary(pl.UTF-8):   Klient bootp i dhcp do automatycznej konfiguracji IP
+Summary(pt_BR.UTF-8):   Cliente para dhcp e bootp para configuraц╖цёo automц║tica de IP
+Summary(ru.UTF-8):   п п╩п╦п╣п╫я┌ bootp п╦ dhcp п╢п╩я▐ п╟п╡я┌п╬п╪п╟я┌п╦я┤п╣я│п╨п╬п╧ п╫п╟я│я┌я─п╬п╧п╨п╦ IP
+Summary(uk.UTF-8):   п п╩я√я■п╫я┌ bootp я┌п╟ dhcp п╢п╩я▐ п╟п╡я┌п╬п╪п╟я┌п╦я┤п╫п╬пЁп╬ п╫п╟п╩п╟пЁп╬п╢п╤п╣п╫п╫я▐ IP
 Name:		pump
 Version:	0.8.24
 Release:	1
@@ -31,51 +31,51 @@ machine to retrieve configuration information from a server. You
 should install this package if you are on a network which uses BOOTP
 or DHCP.
 
-%description -l es
-Cliente dchp y bootp para configuraciСn automАtica de IP.
+%description -l es.UTF-8
+Cliente dchp y bootp para configuraciцЁn automц║tica de IP.
 
-%description -l pl
+%description -l pl.UTF-8
 DHCP (Dynamic Host Configuration Protocol) i BOOTP (Boot Protocol) to
-protokoЁy pozwalaj╠ce urz╠dzeniom w sieci IP otrzymaФ informacje o
-konfiguracji swojej sieci od serwerСw. Celem DHCP i BOOTP jest
-uЁatwienie administrowania du©╠ sieci╠.
+protokoе┌y pozwalajд┘ce urzд┘dzeniom w sieci IP otrzymaд┤ informacje o
+konfiguracji swojej sieci od serwerцЁw. Celem DHCP i BOOTP jest
+uе┌atwienie administrowania duе╪д┘ sieciд┘.
 
-Pump jest demonem zawieraj╠cym klientСw BOOTP i DHCP, co pozwala
-maszynie odczytywaФ informacje o konfiguracji z serwera.
+Pump jest demonem zawierajд┘cym klientцЁw BOOTP i DHCP, co pozwala
+maszynie odczytywaд┤ informacje o konfiguracji z serwera.
 
-%description -l pt_BR
-O pump И um cliente DHCP e BOOTP, que permite que sua mАquina busque
-informaГУes de configuraГЦo de um servidor.
+%description -l pt_BR.UTF-8
+O pump ц╘ um cliente DHCP e BOOTP, que permite que sua mц║quina busque
+informaц╖ц╣es de configuraц╖цёo de um servidor.
 
-Instale este pacote se vocЙ deseja utilizar BOOTP ou DHCP.
+Instale este pacote se vocц╙ deseja utilizar BOOTP ou DHCP.
 
-%description -l uk
-DHCP (Dynamic Host Configuration Protocol) та BOOTP (Boot Protocol) -
-це протоколи, як╕ дозволяють окремим пристроям IP-мереж╕ отримувати
-╕нформац╕ю про ╖х конф╕гурац╕ю ((IP-адреса, маска п╕дмереж╕, бродкаст
-╕ т.╕.) з сервер╕в мереж╕. Загальною метою DHCP та BOOTP ╓ спрощення
-керування великою мережею.
+%description -l uk.UTF-8
+DHCP (Dynamic Host Configuration Protocol) я┌п╟ BOOTP (Boot Protocol) -
+я├п╣ п©я─п╬я┌п╬п╨п╬п╩п╦, я▐п╨я√ п╢п╬п╥п╡п╬п╩я▐я▌я┌я▄ п╬п╨я─п╣п╪п╦п╪ п©я─п╦я│я┌я─п╬я▐п╪ IP-п╪п╣я─п╣п╤я√ п╬я┌я─п╦п╪я┐п╡п╟я┌п╦
+я√п╫я└п╬я─п╪п╟я├я√я▌ п©я─п╬ я≈я┘ п╨п╬п╫я└я√пЁя┐я─п╟я├я√я▌ ((IP-п╟п╢я─п╣я│п╟, п╪п╟я│п╨п╟ п©я√п╢п╪п╣я─п╣п╤я√, п╠я─п╬п╢п╨п╟я│я┌
+я√ я┌.я√.) п╥ я│п╣я─п╡п╣я─я√п╡ п╪п╣я─п╣п╤я√. п≈п╟пЁп╟п╩я▄п╫п╬я▌ п╪п╣я┌п╬я▌ DHCP я┌п╟ BOOTP я■ я│п©я─п╬я┴п╣п╫п╫я▐
+п╨п╣я─я┐п╡п╟п╫п╫я▐ п╡п╣п╩п╦п╨п╬я▌ п╪п╣я─п╣п╤п╣я▌.
 
-Pump - це комб╕нований демон кл╕╓нт╕в BOOTP та DHCP, який дозволя╓
-ваш╕й машин╕ отримувати конф╕гурац╕йну ╕нформац╕ю з сервера.
-Встанов╕ть цей пакет якщо ви в мереж╕, яка використову╓ BOOTP або
+Pump - я├п╣ п╨п╬п╪п╠я√п╫п╬п╡п╟п╫п╦п╧ п╢п╣п╪п╬п╫ п╨п╩я√я■п╫я┌я√п╡ BOOTP я┌п╟ DHCP, я▐п╨п╦п╧ п╢п╬п╥п╡п╬п╩я▐я■
+п╡п╟я┬я√п╧ п╪п╟я┬п╦п╫я√ п╬я┌я─п╦п╪я┐п╡п╟я┌п╦ п╨п╬п╫я└я√пЁя┐я─п╟я├я√п╧п╫я┐ я√п╫я└п╬я─п╪п╟я├я√я▌ п╥ я│п╣я─п╡п╣я─п╟.
+п▓я│я┌п╟п╫п╬п╡я√я┌я▄ я├п╣п╧ п©п╟п╨п╣я┌ я▐п╨я┴п╬ п╡п╦ п╡ п╪п╣я─п╣п╤я√, я▐п╨п╟ п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я■ BOOTP п╟п╠п╬
 DHCP.
 
-%description -l ru
-DHCP (Dynamic Host Configuration Protocol) и BOOTP (Boot Protocol) -
-это протоколы, которые позволяют отдельным устройствам IP-сети
-получать информацию о их конфигурации (IP-адрес, маска подсети,
-бродкаст и т.п.) с сетевых серверов. Общей целью DHCP и BOOTP является
-упрощение управления большой сетью.
+%description -l ru.UTF-8
+DHCP (Dynamic Host Configuration Protocol) п╦ BOOTP (Boot Protocol) -
+я█я┌п╬ п©я─п╬я┌п╬п╨п╬п╩я▀, п╨п╬я┌п╬я─я▀п╣ п©п╬п╥п╡п╬п╩я▐я▌я┌ п╬я┌п╢п╣п╩я▄п╫я▀п╪ я┐я│я┌я─п╬п╧я│я┌п╡п╟п╪ IP-я│п╣я┌п╦
+п©п╬п╩я┐я┤п╟я┌я▄ п╦п╫я└п╬я─п╪п╟я├п╦я▌ п╬ п╦я┘ п╨п╬п╫я└п╦пЁя┐я─п╟я├п╦п╦ (IP-п╟п╢я─п╣я│, п╪п╟я│п╨п╟ п©п╬п╢я│п╣я┌п╦,
+п╠я─п╬п╢п╨п╟я│я┌ п╦ я┌.п©.) я│ я│п╣я┌п╣п╡я▀я┘ я│п╣я─п╡п╣я─п╬п╡. п·п╠я┴п╣п╧ я├п╣п╩я▄я▌ DHCP п╦ BOOTP я▐п╡п╩я▐п╣я┌я│я▐
+я┐п©я─п╬я┴п╣п╫п╦п╣ я┐п©я─п╟п╡п╩п╣п╫п╦я▐ п╠п╬п╩я▄я┬п╬п╧ я│п╣я┌я▄я▌.
 
-Pump - это комбинированный демон клиентов BOOTP и DHCP, который
-позволяет вашей машине получать конфигурационную информацию с сервера.
-Установите этот пакет если вы в сети, которая использует BOOTP или
+Pump - я█я┌п╬ п╨п╬п╪п╠п╦п╫п╦я─п╬п╡п╟п╫п╫я▀п╧ п╢п╣п╪п╬п╫ п╨п╩п╦п╣п╫я┌п╬п╡ BOOTP п╦ DHCP, п╨п╬я┌п╬я─я▀п╧
+п©п╬п╥п╡п╬п╩я▐п╣я┌ п╡п╟я┬п╣п╧ п╪п╟я┬п╦п╫п╣ п©п╬п╩я┐я┤п╟я┌я▄ п╨п╬п╫я└п╦пЁя┐я─п╟я├п╦п╬п╫п╫я┐я▌ п╦п╫я└п╬я─п╪п╟я├п╦я▌ я│ я│п╣я─п╡п╣я─п╟.
+пёя│я┌п╟п╫п╬п╡п╦я┌п╣ я█я┌п╬я┌ п©п╟п╨п╣я┌ п╣я│п╩п╦ п╡я▀ п╡ я│п╣я┌п╦, п╨п╬я┌п╬я─п╟я▐ п╦я│п©п╬п╩я▄п╥я┐п╣я┌ BOOTP п╦п╩п╦
 DHCP.
 
 %package devel
 Summary:	Header file for sending DHCP and BOOTP requests
-Summary(pl):	Plik nagЁСwkowy do wysyЁania ©╠daЯ DHCP i BOOTP
+Summary(pl.UTF-8):   Plik nagе┌цЁwkowy do wysyе┌ania е╪д┘daе└ DHCP i BOOTP
 Group:		Development/Libraries
 # doesn't require base
 
@@ -85,21 +85,21 @@ BOOTP and DHCP requests from their programs. BOOTP and DHCP are
 protocols used to provide network configuration information to
 networked machines.
 
-%description devel -l pl
-Ten pakiet daje programistom mo©liwo╤Ф wysyЁania ©╠daЯ BOOTP i DHCP w
-swoich programach. BOOTP i DHCP to protokoЁy sЁu©╠ce do udostЙpniania
+%description devel -l pl.UTF-8
+Ten pakiet daje programistom moе╪liwoе⌡д┤ wysyе┌ania е╪д┘daе└ BOOTP i DHCP w
+swoich programach. BOOTP i DHCP to protokoе┌y sе┌uе╪д┘ce do udostд≥pniania
 informacji o konfiguracji sieci innym maszynom.
 
 %package static
 Summary:	Static library for sending DHCP and BOOTP requests
-Summary(pl):	Biblioteka statyczna do wysyЁania ©╠daЯ DHCP i BOOTP
+Summary(pl.UTF-8):   Biblioteka statyczna do wysyе┌ania е╪д┘daе└ DHCP i BOOTP
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static library for pump.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka pump.
 
 %prep
