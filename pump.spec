@@ -1,9 +1,9 @@
 Summary:	Bootp and dhcp client for automatic IP configuration
-Summary(es.UTF-8):   Cliente dchp y bootp para configuración automática de IP
-Summary(pl.UTF-8):   Klient bootp i dhcp do automatycznej konfiguracji IP
-Summary(pt_BR.UTF-8):   Cliente para dhcp e bootp para configuração automática de IP
-Summary(ru.UTF-8):   Клиент bootp и dhcp для автоматической настройки IP
-Summary(uk.UTF-8):   Клієнт bootp та dhcp для автоматичного налагодження IP
+Summary(es.UTF-8):	Cliente dchp y bootp para configuración automática de IP
+Summary(pl.UTF-8):	Klient bootp i dhcp do automatycznej konfiguracji IP
+Summary(pt_BR.UTF-8):	Cliente para dhcp e bootp para configuração automática de IP
+Summary(ru.UTF-8):	Клиент bootp и dhcp для автоматической настройки IP
+Summary(uk.UTF-8):	Клієнт bootp та dhcp для автоматичного налагодження IP
 Name:		pump
 Version:	0.8.24
 Release:	1
@@ -75,7 +75,7 @@ DHCP.
 
 %package devel
 Summary:	Header file for sending DHCP and BOOTP requests
-Summary(pl.UTF-8):   Plik nagłówkowy do wysyłania żądań DHCP i BOOTP
+Summary(pl.UTF-8):	Plik nagłówkowy do wysyłania żądań DHCP i BOOTP
 Group:		Development/Libraries
 # doesn't require base
 
@@ -92,7 +92,7 @@ informacji o konfiguracji sieci innym maszynom.
 
 %package static
 Summary:	Static library for sending DHCP and BOOTP requests
-Summary(pl.UTF-8):   Biblioteka statyczna do wysyłania żądań DHCP i BOOTP
+Summary(pl.UTF-8):	Biblioteka statyczna do wysyłania żądań DHCP i BOOTP
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
