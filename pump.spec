@@ -6,7 +6,7 @@ Summary(ru.UTF-8):	Клиент bootp и dhcp для автоматическо�
 Summary(uk.UTF-8):	Клієнт bootp та dhcp для автоматичного налагодження IP
 Name:		pump
 Version:	0.8.24
-Release:	1
+Release:	2
 License:	MIT
 Group:		Networking/Utilities
 Source0:	%{name}-%{version}.tar.gz
@@ -17,6 +17,8 @@ BuildRequires:	gettext-devel
 BuildRequires:	popt-devel
 Requires:	rc-scripts
 Obsoletes:	bootpc
+# sr@Latn vs. sr@latin
+Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -109,7 +111,7 @@ Statyczna biblioteka pump.
 
 mv -f po/{eu_ES,eu}.po
 mv -f po/{no,nb}.po
-mv -f po/{sr,sr@Latn}.po
+mv -f po/{sr,sr@latin}.po
 
 %build
 %{__make} \
