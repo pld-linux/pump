@@ -13,7 +13,7 @@ Source0:	%{name}-%{version}.tar.gz
 # Source0-md5:	866fc9f62b8161eb1514a6a06597edc9
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-pl.patch
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	popt-devel
 Requires:	rc-scripts
 Obsoletes:	bootpc
