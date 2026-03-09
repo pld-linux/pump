@@ -1,0 +1,38 @@
+--- a/dhcp.c
++++ b/dhcp.c
+@@ -1010,7 +1010,7 @@
+ static int createSocket(const char * device) {
+     struct sockaddr_in clientAddr;
+     int s;
+-    int true = 1;
++    int broadcast = 1;
+
+     s = socket(AF_INET, SOCK_DGRAM, 0);
+     if (s < 0)
+@@ -1016,7 +1016,7 @@
+     if (s < 0)
+ 	return -1;
+
+-    if (setsockopt(s, SOL_SOCKET, SO_BROADCAST, &true, sizeof(true))) {
++    if (setsockopt(s, SOL_SOCKET, SO_BROADCAST, &broadcast, sizeof(broadcast))) {
+ 	close(s);
+ 	return -1;
+     }
+@@ -1259,7 +1259,7 @@
+     struct bootpRequest breq, bresp;
+     char * chptr;
+     time_t startTime = pumpUptime();
+-    int true = 1;
++    int broadcast = 1;
+     int ttl = 16;
+     char * saveDeviceName;
+     unsigned char messageType;
+@@ -1280,7 +1280,7 @@
+ 	return perrorstr("socket");
+     }
+
+-    if (setsockopt(s, SOL_SOCKET, SO_BROADCAST, &true, sizeof(true))) {
++    if (setsockopt(s, SOL_SOCKET, SO_BROADCAST, &broadcast, sizeof(broadcast))) {
+ 	close(s);
+ 	return perrorstr("setsockopt");
+     }

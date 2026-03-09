@@ -1,0 +1,11 @@
+--- a/pump.c	2026-03-09 18:29:11.360762220 +0100
++++ b/pump.c	2026-03-09 18:29:11.362552492 +0100
+@@ -598,7 +598,7 @@
+ 		    if (intf[i].set & PUMP_NETINFO_HAS_HOSTNAME)
+ 			strncpy(cmd.u.status.hostname,
+ 			    intf->hostname, sizeof(cmd.u.status.hostname));
+-		    cmd.u.status.hostname[sizeof(cmd.u.status.hostname)] = '\0';
++		    cmd.u.status.hostname[sizeof(cmd.u.status.hostname) - 1] = '\0';
+ 
+ 		    if (intf[i].set & PUMP_NETINFO_HAS_DOMAIN)
+ 			strncpy(cmd.u.status.domain,
